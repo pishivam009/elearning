@@ -1,1 +1,6 @@
-<p>professor works!</p>
+<div align="center" *ngIf='val.url=="/professor"'>
+    <h5> Hi, Professor!</h5> <br>
+    <button type="button" class="btn btn-primary" routerLink='login'>Log In</button> &nbsp;
+    <button type="button" class="btn btn-primary" routerLink='signup'>Sign Up</button>
+</div>
+<router-outlet></router-outlet>

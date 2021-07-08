@@ -1,7 +1,7 @@
 <div class="b-example-divider"></div>
 
 <div class="container">
-    <header class=" page-header d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <header class="page-header d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <a routerLink="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
             <b>E-Learning System</b>
         </a>
@@ -13,9 +13,9 @@
         </ul>
 
         <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-primary" routerLink="user" *ngIf='rtr.url=="/"'>User</button> &nbsp;
-            <button type="button" class="btn btn-primary" routerLink="doctor" *ngIf='rtr.url=="/"'>Professor</button> &nbsp;
-            <button type="button" class="btn btn-primary" routerLink="admin" *ngIf='rtr.url=="/"'>Admin</button>&nbsp;
+            <button type="button" class="btn btn-primary" routerLink="user" *ngIf='rtr.url=="/"'>User</button>
+            <button type="button" class="btn btn-primary" routerLink="professor" *ngIf='rtr.url=="/"'>Professor</button>
+            <button type="button" class="btn btn-primary" routerLink="admin" *ngIf='rtr.url=="/"'>Admin</button>
             <button type="button" class="btn btn-primary" *ngIf='rtr.url=="/user/dashboard" || rtr.url=="/admin/dashboard"|| rtr.url=="/professor/dashboard"' (click)="doLogout()">Log Out</button>
         </div>
     </header>

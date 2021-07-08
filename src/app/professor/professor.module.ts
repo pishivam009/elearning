@@ -8,10 +8,14 @@ import { ProfessorSignupComponent } from './professor-signup/professor-signup.co
 import { ProfessorLoginComponent } from './professor-login/professor-login.component';
 import { LinkListComponent } from './link-list/link-list.component';
 import { MessageListComponent } from './message-list/message-list.component';
+import { FormsModule } from '@angular/forms';
+import { ProfessorComponent } from './professor.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
   declarations: [
+    ProfessorComponent,
     ProfessorDashboardComponent,
     ProfessorUpdateComponent,
     ProfessorSignupComponent,
@@ -21,7 +25,9 @@ import { MessageListComponent } from './message-list/message-list.component';
   ],
   imports: [
     CommonModule,
-    ProfessorRoutingModule
+    ProfessorRoutingModule,
+    FormsModule,
+    MatTabsModule
   ]
 })
 export class ProfessorModule { }

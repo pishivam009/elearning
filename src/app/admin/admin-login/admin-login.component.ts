@@ -1,4 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Admin } from 'src/app/admin';
+import { ApiService } from 'src/app/api.service';
+import { LoginDetails } from 'src/app/login-details';
 
 @Component({
   selector: 'app-admin-login',
@@ -7,9 +12,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private http: HttpClient, private apiService: ApiService) { }
 
   ngOnInit(): void {
+  }
+
+  data: Admin = new Admin();
+  doAdminLogin(formValue: LoginDetails) {
+    this.apiService.adminLogin(formValue).subscribe(
+      (val: Admin) => {
+        this.data = val;
+        console.log(val);
+
+        if (val.id > 0) {
+
+          sessionStorage.setItem("adminName", val.name);
+          sessionStorage.setItem("adminEmail", val.email);
+          sessionStorage.setItem("adminIsLoggedIn", 'true');
+        
+          alert("Login successful");
+          this.router.navigate(['../admin/dashboard']);
+    
+        } else {
+          alert("Invalid Credentials");
+          this.router.navigate(['../admin']);
+        }
+    
+      }
+    );
+    
+
   }
 
 }

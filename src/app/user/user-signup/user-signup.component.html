@@ -1,1 +1,34 @@
-<p>user-signup works!</p>
+<div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+
+        <form #signupForm="ngForm">
+            <div class="form-group input-group">
+                <input name="name" class="form-control" placeholder="Full name" type="text" ngModel required><br>
+            </div>
+            <div class="form-group input-group">
+                <input name="email" class="form-control" placeholder="Email Address" type="email" ngModel required disabled="true"><br>
+            </div>
+            <div class="form-group input-group">
+                <input name="contact" class="form-control" placeholder="Contact Number" type="tel" ngModel required><br>
+            </div>
+            <div class="form-group input-group">
+                <input name="university" class="form-control" placeholder="University" type="address" ngModel required><br>
+            </div>
+            <div class="form-group input-group">
+                <input name="dept" class="form-control" placeholder="Department" type="text" ngModel required><br>
+            </div>
+            <div class="form-group input-group">
+                <input name="password" class="form-control" placeholder="Enter Password" type="password" ngModel required><br>
+            </div>
+
+            <div align="center " *ngIf="!signupForm.valid ">Fill all fields to get Submit Button</div>
+            <div class="form-group " *ngIf="signupForm.valid ">
+                <button type="submit" class="btn btn-primary btn-block " [disabled]="!signupForm.valid" (click)="doUserSignup(signupForm.value)"> Create Account  </button>
+
+            </div>
+            <button type="reset" class="btn btn-primary btn-block">Reset</button>
+            <p class="text-center ">Have an account? <a routerLink='../login'>Log In</a> </p>
+        </form>
+    </article>
+</div>
