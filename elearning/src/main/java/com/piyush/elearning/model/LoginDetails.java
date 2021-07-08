@@ -1,0 +1,25 @@
+package com.piyush.elearning.model;
+
+import javax.persistence.Entity;
+
+public class LoginDetails {
+	private String emailid;
+	private String password;
+
+	public String getEmailid() {
+		return emailid;
+	}
+
+	public void setEmailid(String emailid) {
+		this.emailid = emailid;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+}
